@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivalik Estate | Premium Real Estate in Pune</title>
+    <style>
+        :root {
+            --primary-dark: #1A1A1A; /* Charcoal/Black */
+            --accent-gold: #C5A059; /* Shivalik Gold */
+            --bg-light: #F7F5F0; /* Cream/Off-white */
+            --text-dark: #333333;
+        }
+        body {
+            font-family: 'Georgia', serif; /* A classic font for a premium feel */
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+        /* Header Section */
+        header {
+            background-color: var(--primary-dark);
+            color: var(--accent-gold);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 1px;
+        }
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(247, 245, 240, 0.9), rgba(247, 245, 240, 0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        .hero h2 {
+            font-size: 2.2em;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+        }
+        /* Trust Badge */
+        .maharera-badge {
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid var(--accent-gold);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+        }
+        /* Services Section */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--accent-gold);
+            font-family: 'Arial', sans-serif;
+        }
+        .service-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        /* Form Container */
+        .form-container {
+            max-width: 450px;
+            margin: -20px auto 50px auto;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .form-container h3 {
+            text-align: center;
+            color: var(--primary-dark);
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        label {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+            color: #555;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent-gold);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button:hover {
+            background-color: #b08d4a;
+        }
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+        }
+        .footer p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+        .footer .highlight {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Shivalik Estate</h1>
+        <p>Rooted in Trust. Built for a Brighter Tomorrow.</p>
+        <p style="font-size: 0.8em; color: #888;">(Formerly The Urban Edge Realty)</p>
+    </header>
+
+    <div class="hero">
+        <h2>Your Trusted Property Partner in Pune</h2>
+        <p>With the same expert team and stronger vision, we guide you to the perfect residential or commercial property with absolute transparency.</p>
+        <div class="maharera-badge">✓ MahaRERA Registered</div>
+    </div>
+
+    <div class="services">
+        <div class="service-card">
+            <h4>🏠 Premium Residential</h4>
+            <p style="font-size: 0.9em; color: #666;">Luxury apartments and villas.</p>
+        </div>
+        <div class="service-card">
+            <h4>🏢 Commercial Spaces</h4>
+            <p style="font-size: 0.9em; color: #666;">Offices and retail locations.</p>
+        </div>
+        <div class="service-card">
+            <h4>🤝 Expert Guidance</h4>
+            <p style="font-size: 0.9em; color: #666;">End-to-end support.</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h3>Find Your Perfect Property</h3>
+        
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your mobile number">
+
+        <label for="propertyType">Interested In</label>
+        <select id="propertyType">
+            <option value="Residential Property">Residential Property</option>
+            <option value="Commercial Space">Commercial Space</option>
+            <option value="Investment Opportunity">Investment Opportunity</option>
+        </select>
+
+        <label for="budget">Estimated Budget</label>
+        <select id="budget">
+            <option value="Under 50 Lakhs">Under 50 Lakhs</option>
+            <option value="50 Lakhs - 1 Crore">50 Lakhs - 1 Crore</option>
+            <option value="1 Crore - 3 Crores">1 Crore - 3 Crores</option>
+            <option value="Above 3 Crores">Above 3 Crores</option>
+        </select>
+
+        <button onclick="sendToWhatsApp()">Connect with an Expert</button>
+    </div>
+
+    <div class="footer">
+        <p class="highlight">SHIVALIK ESTATE</p>
+        <p>Serving Pune with Trust & Transparency</p>
+        <p style="margin-top: 20px; font-size: 0.8em;">© 2026 Shivalik Estate. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let propertyType = document.getElementById('propertyType').value;
+            let budget = document.getElementById('budget').value;
+            
+            if(!name || !phone) {
+                alert("Please enter both your name and phone number!");
+                return;
+            }
+
+            // Constructing the WhatsApp message
+            let message = `Hello Shivalik Estate! 🏢%0A%0AMy name is *${name}*.%0A%0A*I am looking for:* ${propertyType}%0A*My Budget:* ${budget}%0A*Contact:* ${phone}%0A%0APlease contact me to discuss property options in Pune.`;
+            
+            // You will need to replace this with the actual WhatsApp number for Shivalik Estate
+            // Format: Country code followed by the 10-digit number (e.g., 919876543210)
+            let waNumber = "919999999999"; // REPLACE THIS NUMBER
+            let waURL = `https://wa.me/${waNumber}?text=${message}`;
+            
+            window.open(waURL, '_blank');
+        }
+    </script>
+
+</body>
+</html>
