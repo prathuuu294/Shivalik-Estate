@@ -3,254 +3,502 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivalik Estate | Premium Real Estate in Pune</title>
+    <title>Shivalik Estate | Luxury Real Estate in Pune</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-dark: #1A1A1A; /* Charcoal/Black */
-            --accent-gold: #C5A059; /* Shivalik Gold */
-            --bg-light: #F7F5F0; /* Cream/Off-white */
-            --text-dark: #333333;
+            --charcoal: #111111;
+            --charcoal-light: #1a1a1a;
+            --gold: #C5A059;
+            --gold-light: #d8b877;
+            --cream: #FDFBF7;
+            --white: #FFFFFF;
         }
-        body {
-            font-family: 'Georgia', serif; /* A classic font for a premium feel */
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            box-sizing: border-box;
         }
-        /* Header Section */
-        header {
-            background-color: var(--primary-dark);
-            color: var(--accent-gold);
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-gold);
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Navbar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+        nav.scrolled {
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 50px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .logo-text {
+            color: var(--gold);
+            font-size: 24px;
+            font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-        header p {
-            margin: 10px 0 0 0;
-            font-size: 1.1em;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            letter-spacing: 1px;
+        .logo-sub {
+            color: var(--white);
+            font-size: 10px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 3px;
+            display: block;
         }
-        /* Hero Section */
+
+        /* Cinematic Hero Section */
         .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(247, 245, 240, 0.9), rgba(247, 245, 240, 0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            overflow: hidden;
         }
-        .hero h2 {
-            font-size: 2.2em;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            animation: kenBurns 20s infinite alternate;
+            z-index: -2;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(17,17,17,0.7), rgba(17,17,17,0.4));
+            z-index: -1;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .hero-content {
+            color: var(--white);
+            padding: 0 20px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards 0.5s;
+        }
+        .hero h1 {
+            font-size: 4.5vw;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
         .hero p {
-            font-size: 1.2em;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            color: #ddd;
         }
-        /* Trust Badge */
-        .maharera-badge {
+        .gold-btn {
             display: inline-block;
-            background-color: transparent;
-            border: 2px solid var(--accent-gold);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            color: var(--primary-dark);
+            padding: 16px 40px;
+            background: var(--gold);
+            color: var(--charcoal);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 1px solid var(--gold);
+        }
+        .gold-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Legacy / About Section */
+        .legacy {
+            padding: 100px 10vw;
+            text-align: center;
+            background-color: var(--white);
+        }
+        .gold-accent {
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .legacy h2 {
+            font-size: 2.8rem;
+            color: var(--charcoal);
             margin-bottom: 30px;
         }
-        /* Services Section */
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 20px 40px 20px;
-            max-width: 1000px;
+        .legacy p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
             margin: 0 auto;
         }
-        .service-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--accent-gold);
-            font-family: 'Arial', sans-serif;
-        }
-        .service-card h4 {
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-        /* Form Container */
-        .form-container {
-            max-width: 450px;
-            margin: -20px auto 50px auto;
-            background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 10;
-        }
-        .form-container h3 {
-            text-align: center;
-            color: var(--primary-dark);
-            margin-top: 0;
-            font-size: 1.5em;
-        }
-        label {
-            font-family: 'Arial', sans-serif;
-            font-size: 0.9em;
-            color: #555;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0 20px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-        }
-        button {
-            width: 100%;
-            padding: 16px;
-            background-color: var(--accent-gold);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 18px;
-            font-weight: bold;
-            font-family: 'Arial', sans-serif;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-transform: uppercase;
+        .maharera {
+            margin-top: 40px;
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            background: rgba(197, 160, 89, 0.05);
+            color: var(--charcoal);
+            font-weight: 500;
             letter-spacing: 1px;
+            border-radius: 4px;
         }
-        button:hover {
-            background-color: #b08d4a;
+
+        /* Expertise Grid */
+        .expertise {
+            padding: 100px 5vw;
+            background-color: var(--charcoal);
+            color: var(--white);
         }
-        /* Footer */
-        .footer {
-            background-color: var(--primary-dark);
-            color: white;
+        .expertise-header {
             text-align: center;
-            padding: 30px 20px;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.9em;
+            margin-bottom: 60px;
         }
-        .footer p {
-            margin: 5px 0;
-            color: #ccc;
+        .expertise-header h2 {
+            font-size: 2.8rem;
+            color: var(--white);
         }
-        .footer .highlight {
-            color: var(--accent-gold);
-            font-weight: bold;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--charcoal-light);
+            padding: 50px 30px;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+        .card p {
+            color: #aaa;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* VIP Inquiry Form */
+        .inquiry {
+            padding: 100px 5vw;
+            background: var(--cream);
+            display: flex;
+            justify-content: center;
+        }
+        .form-wrapper {
+            background: var(--white);
+            padding: 60px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+        }
+        .form-wrapper h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--charcoal);
+        }
+        
+        .input-group {
+            position: relative;
+            margin-bottom: 35px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: var(--charcoal);
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            background: transparent;
+            transition: 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .input-group label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: 16px;
+            color: #999;
+            pointer-events: none;
+            transition: 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Floating Label Effect */
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -20px;
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-bottom: 2px solid var(--gold);
+        }
+        .input-group select {
+            color: #555;
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--charcoal);
+            color: var(--gold);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s ease;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+        footer .logo-text {
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav { padding: 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            .legacy, .expertise, .inquiry { padding: 60px 20px; }
+            .form-wrapper { padding: 40px 20px; }
+            .hero-content { margin-top: 50px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Shivalik Estate</h1>
-        <p>Rooted in Trust. Built for a Brighter Tomorrow.</p>
-        <p style="font-size: 0.8em; color: #888;">(Formerly The Urban Edge Realty)</p>
-    </header>
-
-    <div class="hero">
-        <h2>Your Trusted Property Partner in Pune</h2>
-        <p>With the same expert team and stronger vision, we guide you to the perfect residential or commercial property with absolute transparency.</p>
-        <div class="maharera-badge">✓ MahaRERA Registered</div>
-    </div>
-
-    <div class="services">
-        <div class="service-card">
-            <h4>🏠 Premium Residential</h4>
-            <p style="font-size: 0.9em; color: #666;">Luxury apartments and villas.</p>
+    <!-- Transparent to Solid Navigation -->
+    <nav id="navbar">
+        <div>
+            <span class="logo-text">SHIVALIK ESTATE</span>
+            <span class="logo-sub">PREMIUM PROPERTY PARTNERS</span>
         </div>
-        <div class="service-card">
-            <h4>🏢 Commercial Spaces</h4>
-            <p style="font-size: 0.9em; color: #666;">Offices and retail locations.</p>
+        <a href="#inquiry" class="gold-btn" style="padding: 10px 20px; font-size: 12px;">Contact Us</a>
+    </nav>
+
+    <!-- Cinematic Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>A Bolder Tomorrow.</h1>
+            <p>Elevating Pune's Real Estate Experience with Trust, Transparency, and Luxury.</p>
+            <a href="#about" class="gold-btn">Discover Our Legacy</a>
         </div>
-        <div class="service-card">
-            <h4>🤝 Expert Guidance</h4>
-            <p style="font-size: 0.9em; color: #666;">End-to-end support.</p>
+    </section>
+
+    <!-- Legacy / Rebranding Section -->
+    <section id="about" class="legacy reveal">
+        <span class="gold-accent">Our Evolution</span>
+        <h2>A New Name. The Same Commitment.</h2>
+        <p>We are proud to announce that <strong>The Urban Edge Realty</strong> is now <strong>Shivalik Estate</strong>. With the same dedicated team and unwavering values, our vision has grown stronger. We continue our commitment to helping you find the perfect property through expert guidance, safeguarding your investments every step of the way.</p>
+        <div class="maharera">
+            <span style="color: var(--gold); margin-right: 10px; font-size: 1.2rem;">🏛</span> MahaRERA Registered Partner
         </div>
-    </div>
+    </section>
 
-    <div class="form-container">
-        <h3>Find Your Perfect Property</h3>
-        
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="Enter your name">
+    <!-- Interactive Expertise Grid -->
+    <section class="expertise">
+        <div class="expertise-header reveal">
+            <span class="gold-accent">Our Domains</span>
+            <h2>Mastering the Market</h2>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <span class="card-icon">🗝️</span>
+                <h3>Premium Residential</h3>
+                <p>Curated luxury apartments, penthouses, and bespoke villas from the most reputed builders in Pune. Your dream home awaits.</p>
+            </div>
+            <div class="card reveal" style="transition-delay: 0.2s;">
+                <span class="card-icon">🏢</span>
+                <h3>Commercial Spaces</h3>
+                <p>High-ROI retail spaces, premium corporate offices, and strategic commercial hubs designed for modern businesses to thrive.</p>
+            </div>
+            <div class="card reveal" style="transition-delay: 0.4s;">
+                <span class="card-icon">🤝</span>
+                <h3>End-to-End Advisory</h3>
+                <p>From site visits and deep market analysis to transparent legal documentation and seamless handovers, we stand by your side.</p>
+            </div>
+        </div>
+    </section>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="Enter your mobile number">
+    <!-- VIP Inquiry Form -->
+    <section id="inquiry" class="inquiry">
+        <div class="form-wrapper reveal">
+            <span class="gold-accent" style="text-align: center;">Private Consultation</span>
+            <h2>Register Your Interest</h2>
+            
+            <div class="input-group">
+                <input type="text" id="name" required>
+                <label>Full Name</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="tel" id="phone" required>
+                <label>Mobile Number</label>
+            </div>
+            
+            <div class="input-group" style="margin-top: 20px;">
+                <label style="top: -20px; font-size: 12px; color: var(--gold); font-weight: 600;">Portfolio Interest</label>
+                <select id="propertyType">
+                    <option value="" disabled selected>Select Property Type</option>
+                    <option value="Luxury Residential (Apartments/Villas)">Luxury Residential</option>
+                    <option value="Commercial (Offices/Retail)">Commercial Spaces</option>
+                    <option value="Investment & Land">Investment Portfolios</option>
+                </select>
+            </div>
 
-        <label for="propertyType">Interested In</label>
-        <select id="propertyType">
-            <option value="Residential Property">Residential Property</option>
-            <option value="Commercial Space">Commercial Space</option>
-            <option value="Investment Opportunity">Investment Opportunity</option>
-        </select>
+            <button class="submit-btn" onclick="sendToWhatsApp()">Schedule Viewing</button>
+            <p style="text-align: center; margin-top: 15px; font-size: 12px; color: #aaa;">Your privacy is paramount. Information is strictly confidential.</p>
+        </div>
+    </section>
 
-        <label for="budget">Estimated Budget</label>
-        <select id="budget">
-            <option value="Under 50 Lakhs">Under 50 Lakhs</option>
-            <option value="50 Lakhs - 1 Crore">50 Lakhs - 1 Crore</option>
-            <option value="1 Crore - 3 Crores">1 Crore - 3 Crores</option>
-            <option value="Above 3 Crores">Above 3 Crores</option>
-        </select>
+    <!-- Minimalist Footer -->
+    <footer>
+        <span class="logo-text">SHIVALIK ESTATE</span>
+        <p>Your Trusted Property Partner in Pune.</p>
+        <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Shivalik Estate. All Rights Reserved.</p>
+    </footer>
 
-        <button onclick="sendToWhatsApp()">Connect with an Expert</button>
-    </div>
-
-    <div class="footer">
-        <p class="highlight">SHIVALIK ESTATE</p>
-        <p>Serving Pune with Trust & Transparency</p>
-        <p style="margin-top: 20px; font-size: 0.8em;">© 2026 Shivalik Estate. All Rights Reserved.</p>
-    </div>
-
+    <!-- Interactive Scripts -->
     <script>
+        // 1. Sticky Glassmorphism Navbar on Scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 2. Scroll Reveal Animations (Intersection Observer)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // 3. WhatsApp Integration
         function sendToWhatsApp() {
             let name = document.getElementById('name').value;
             let phone = document.getElementById('phone').value;
             let propertyType = document.getElementById('propertyType').value;
-            let budget = document.getElementById('budget').value;
             
             if(!name || !phone) {
-                alert("Please enter both your name and phone number!");
+                alert("Please provide your name and contact number for the consultation.");
                 return;
             }
 
-            // Constructing the WhatsApp message
-            let message = `Hello Shivalik Estate! 🏢%0A%0AMy name is *${name}*.%0A%0A*I am looking for:* ${propertyType}%0A*My Budget:* ${budget}%0A*Contact:* ${phone}%0A%0APlease contact me to discuss property options in Pune.`;
+            let message = `*Private Consultation Request* 🏢%0A%0A*Name:* ${name}%0A*Contact:* ${phone}%0A*Interest:* ${propertyType}%0A%0AI would like to connect with a Shivalik Estate expert regarding properties in Pune.`;
             
-            // You will need to replace this with the actual WhatsApp number for Shivalik Estate
-            // Format: Country code followed by the 10-digit number (e.g., 919876543210)
-            let waNumber = "919999999999"; // REPLACE THIS NUMBER
+            // REPLACE THIS with Shivalik Estate's actual business WhatsApp Number
+            let waNumber = "919999999999"; 
             let waURL = `https://wa.me/${waNumber}?text=${message}`;
             
             window.open(waURL, '_blank');
         }
     </script>
-
 </body>
 </html>
